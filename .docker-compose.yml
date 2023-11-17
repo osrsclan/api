@@ -1,0 +1,26 @@
+version: "3"
+services:
+  redis:
+    container_name: redis
+    image: redis
+    env_file:
+      - ./.env
+    expose:
+      - "${REDIS_PORT}"
+    ports:
+      - "${REDIS_PORT}:${REDIS_PORT}" 
+
+  db:
+    container_name: db
+    image: postgres:14
+    env_file:
+      - ./.env
+    expose:
+      - "${POSTGRES_PORT}"
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}" 
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
