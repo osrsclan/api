@@ -1,9 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { Service } from 'typedi';
 
-import { Controller } from '../../decorators/controller';
-import { HttpGet } from '../../decorators/http-methods';
-import { Policy } from '../../decorators/policy';
+import { Controller, HttpGet, Policy } from '../../decorators';
 import { ViewPlayersPolicy } from './policies/view-players.policy';
 
 @Service()

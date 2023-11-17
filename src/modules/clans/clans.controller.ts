@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { Controller } from '../../decorators/controller';
-import { HttpGet } from '../../decorators/http-methods';
 import { Service } from 'typedi';
+
+import { Controller, HttpGet } from '../../decorators';
 
 @Service()
 @Controller('/clans')
